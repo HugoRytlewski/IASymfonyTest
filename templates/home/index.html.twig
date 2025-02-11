@@ -1,6 +1,18 @@
+{# templates/home/index.html.twig #}
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<h1>ChatGpt Experimentation</h1>
+    <h1>ChatGpt Experimentation 🤖</h1>
 
+    {{ form_start(form) }}
+    {{ form_row(form.chat) }}
+    {{ form_row(form.submit) }}
+    {{ form_end(form) }}
+
+    {% if response is not null %}
+        <div class="response">
+            <h2>Réponse :</h2>
+            <p>{{ response }}</p>
+        </div>
+    {% endif %}
 {% endblock %}

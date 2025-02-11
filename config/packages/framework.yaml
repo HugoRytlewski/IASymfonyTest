@@ -1,6 +1,11 @@
 # see https://symfony.com/doc/current/reference/configuration/framework.html
 framework:
     secret: '%env(APP_SECRET)%'
+    http_client:
+        max_host_connections: 5
+        default_options:
+            max_duration: 15
+            timeout: 10
 
     # Note that the session will be started ONLY if you read or write from it.
     session: true
